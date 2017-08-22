@@ -28,8 +28,8 @@ def place_queen(soln, n):
             else:
                 place_queen(soln, n)
         soln.pop()
-n = 4
-place_queen(list(), n)
+# n = 4
+# place_queen(list(), n)
 # result:
 #
 # [(1, 0), (3, 1), (0, 2), (2, 3)]
