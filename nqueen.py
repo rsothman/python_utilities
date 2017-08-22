@@ -11,11 +11,10 @@ def can_attack(attacker_pos, victim_pos, n):
 def any_can_attack(cur_soln, n):
     if len(cur_soln) < 2:
         return False
-    if any([can_attack(cur_soln[attacker], cur_soln[-1], n)
-            for attacker in range(len(cur_soln) -1)]):
-        return True
-    else:
-        return False
+    for attacker in cur_soln[:-1]:
+        if can_attack(attacker, cur_soln[-1], n):
+            return True
+    return False
 
 
 def place_queen(soln, n):
@@ -29,8 +28,8 @@ def place_queen(soln, n):
             else:
                 place_queen(soln, n)
         soln.pop()
-# n = 4
-# place_queen(list(), n)
+n = 4
+place_queen(list(), n)
 # result:
 #
 # [(1, 0), (3, 1), (0, 2), (2, 3)]
