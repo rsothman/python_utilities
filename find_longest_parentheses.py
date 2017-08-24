@@ -45,5 +45,8 @@ class LongestValidParentheses(object):
                 return valid_prace
         return valid_prace
 
-x=LongestValidParentheses()
-print(x.longest_valid_parentheses('(()))'))
+# x=LongestValidParentheses()
+# print(x.longest_valid_parentheses('(()))'))
+# (())
+# print(x.longest_valid_parentheses(')()())'))
+# ()()
