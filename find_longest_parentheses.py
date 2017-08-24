@@ -10,28 +10,28 @@ class LongestValidParentheses(object):
         is_valid = self.validate_str(s)
         while is_valid != 0:
             if is_valid > 0:
-                first_open = self.find_first(s, skip=2)
+                first_open = self.find_first(s, occurence=2)
                 s = s[first_open:]
             else:
-                last_close = self.find_last(s, skip=2)
+                last_close = self.find_last(s, occurence=2)
                 s = s[:last_close+1]
             is_valid = self.validate_str(s)
         return s
 
-    def find_first(self, x, skip = 1):
+    def find_first(self, x, occurence = 1):
         found = 0
         for i in range(len(x)):
             if x[i] == '(':
                 found += 1
-                if found == skip:
+                if found == occurence:
                     return i
 
-    def find_last(self, x, skip = 1):
+    def find_last(self, x, occurence = 1):
         found = 0
         for i in range(len(x) - 1, 0, -1):
             if x[i] == ')':
                 found += 1
-                if found == skip:
+                if found == occurence:
                     return i
 
     def validate_str(self, x):
