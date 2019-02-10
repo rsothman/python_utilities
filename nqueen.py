@@ -1,4 +1,4 @@
-def can_attack(attacker_pos, victim_pos, n):
+def can_attack(attacker_pos, victim_pos):
     x_attacker, y_attacker = attacker_pos
     x_victim, y_victim = victim_pos
     if x_attacker == x_victim or y_attacker == y_victim:
@@ -12,7 +12,7 @@ def any_can_attack(cur_soln, n):
     if len(cur_soln) < 2:
         return False
     for attacker in cur_soln[:-1]:
-        if can_attack(attacker, cur_soln[-1], n):
+        if can_attack(attacker, cur_soln[-1]):
             return True
     return False
 
